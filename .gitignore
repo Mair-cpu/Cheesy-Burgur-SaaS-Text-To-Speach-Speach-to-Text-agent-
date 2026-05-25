@@ -1,0 +1,5 @@
+api keys
+db_config.php
+.env
+*.log
+.DS_Store
