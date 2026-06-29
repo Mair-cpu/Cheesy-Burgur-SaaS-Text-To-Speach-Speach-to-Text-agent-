@@ -6,6 +6,7 @@
 // ================================================================
 session_start();
 header('Content-Type: application/json');
+include_once __DIR__ . '/env.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Access-Control-Allow-Methods: POST');
@@ -19,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ── ✅ SAME GROQ KEY AS voice_stt.php ────────────────────────────
-define('GROQ_API_KEY', getenv('GROQ_API_KEY') ?: 'REPLACE_WITH_YOUR_GROQ_API_KEY');
+$groq_api_key = getenv('GROQ_API_KEY') ?: 'your_local_fallback_key_here';
+
 define('GROQ_MODEL',   'llama-3.3-70b-versatile');  // Best free model
 // ================================================================
 

@@ -5,10 +5,10 @@
 // ================================================================
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+include_once __DIR__ . '/env.php';
 
 // ── ✅ PASTE YOUR GROQ API KEY HERE ──────────────────────────────
-define('GROQ_API_KEY', getenv('GROQ_API_KEY') ?: 'REPLACE_WITH_YOUR_GROQ_API_KEY');
-define('GROQ_MODEL', 'whisper-large-v3-turbo');
+$groq_api_key = getenv('GROQ_API_KEY') ?: 'your_local_fallback_key_here';define('GROQ_MODEL', 'whisper-large-v3-turbo');
 define('MAX_AUDIO_MB', 25);
 
 // ── Validate request ─────────────────────────────────────────────
